@@ -5,10 +5,19 @@
 </head>
 <body>
     <h1>ERC-7201 Namespace Calculator</h1>
-    <p>Enter a namespace to calculate its ERC-7201 storage slot location.</p>
+    <p>Calculate storage slot locations for <a href="https://eips.ethereum.org/EIPS/eip-7201" target="_blank">ERC-7201</a> namespaces.</p>
+    
+    <h2>Web Interface</h2>
     <form action="/submit" method="post">
         <input type="text" name="namespace" placeholder="e.g. my-namespace" required>
         <button type="submit">Calculate</button>
     </form>
+
+    <h2>Alternative Methods</h2>
+    <h3>Using Foundry Cast</h3>
+    <pre><code>cast storage --namespace "your.namespace"</code></pre>
+
+    <h3>Using cURL</h3>
+    <pre><code>curl -X POST -d "namespace=your.namespace" http://localhost:5000/submit</code></pre>
 </body>
 </html>
