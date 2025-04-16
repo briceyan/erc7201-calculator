@@ -11,8 +11,12 @@
     </p>
 
     <form action="/submit" method="post">
-      <input type="text" name="namespace" placeholder="e.g. example.main" required />
-      <button type="submit">Calculate</button>
+      <input type="text" name="namespace" placeholder="e.g. example.main" required 
+             style="padding: 10px; font-size: 16px; width: 300px; height: 40px; border-radius: 5px; border: 1px solid #ccc;" />
+      <button type="submit" 
+              style="padding: 10px 20px; font-size: 16px; height: 40px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Calculate
+      </button>
     </form>
 
     <h3>Using cURL</h3>
