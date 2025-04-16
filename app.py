@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, make_response
+from flask import Flask, render_template, request, make_response
 from erc7201 import erc7201, format_solidity
 
 app = Flask(__name__)
-
-# ai! remove the /submit route, decide inside /{namespace} whether it should be plain/text or html
 
 
 def is_browser(user_agent):
@@ -38,9 +36,3 @@ def calculate(namespace):
     return response
 
 
-@app.route("/submit", methods=["POST"])
-def submit():
-    namespace = request.form["namespace"]
-    if is_browser(request.user_agent.string):
-        return redirect(url_for("calculate", namespace=namespace))
-    return calculate(namespace)
