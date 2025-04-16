@@ -12,7 +12,7 @@ def is_browser(user_agent):
 def index():
     if is_browser(request.user_agent.string):
         return render_template('index.html')
-    return "ERC-7201 Namespace Calculator\n\nSend POST request to /submit with 'namespace' parameter or visit /<namespace>"
+    return "ERC-7201 Slot Calculator\n\nSend POST request to /submit with 'namespace' parameter or visit /<namespace>"
 
 @app.route('/<namespace>')
 def calculate(namespace):
