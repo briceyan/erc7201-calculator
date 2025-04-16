@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>ERC-7201 Slot Calculator</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css" />
     <style>
       .copy-btn {
         position: absolute;
@@ -12,28 +12,31 @@
     </style>
   </head>
   <body class="container">
-    <h1>ERC-7201 Slot Calculator</h1>
-    <p>
-      Calculate ERC-7201 storage slots for
-      <a href="https://eips.ethereum.org/EIPS/eip-7201" target="_blank">ERC-7201</a> namespaces.
-    </p>
+    <main class="container">
+      <h1>ERC-7201 Slot Calculator</h1>
+      <p>
+        Calculate ERC-7201 storage slots for
+        <a href="https://eips.ethereum.org/EIPS/eip-7201" target="_blank">ERC-7201</a> namespaces.
+      </p>
 
-    <form onsubmit="window.location.href='/'+document.querySelector('input').value; return false;">
-      <div class="grid">
-        <input
-          type="text"
-          value="example.main"
-          placeholder="e.g. example.main"
-          required
-        />
+      <form onsubmit="window.location.href='/'+document.querySelector('input').value; return false;">
+        <input type="text" value="example.main" placeholder="e.g. example.main" required />
         <button type="submit">Calculate</button>
-      </div>
-    </form>
+      </form>
 
-    <h3>Using cURL</h3>
-    <pre><code>curl {{ host_url }}example.main</code></pre>
+      <h3>Using cURL</h3>
+      <pre><code>curl {{ host_url }}example.main</code></pre>
 
-    <h3>Using Foundry Cast</h3>
-    <pre><code>cast index-erc7201 example.main</code></pre>
+      <h3>Using Foundry Cast</h3>
+      <pre><code>cast index-erc7201 example.main</code></pre>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+      <small
+        >Built with <a href="https://picocss.com">Pico</a> •
+        <a href="https://github.com/picocss/examples/blob/master/v2-html/index.html">Source code</a></small
+      >
+    </footer>
   </body>
 </html>
