@@ -14,7 +14,7 @@ def erc7201(namespace: str) -> str:
 def format_solidity(namespace: str, slot: str) -> str:
     parts = namespace.replace("-", "_").split(".")
     name = parts[-1]
-    struct_name = name[0].upper() + name[1:] + "Storage"  # PascalCase
+    struct_name = name.capitalize() + "Storage"  # PascalCase
     const_name = name.upper() + "_STORAGE_LOCATION"
     return f"""/// @custom:storage-location erc7201:{namespace}
 struct {struct_name} {{}}
