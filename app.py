@@ -10,11 +10,12 @@ def is_browser(user_agent):
     return user_agent and any(b in user_agent.lower() for b in browsers)
 
 
+# ai! fix
 @app.route("/")
 def index():
-    if is_browser(request.user_agent.string):
-        return render_template("index.html", host_url=request.host_url)
-    return render_template("index.text")
+    template = is_browser(request.user_agent.string) ? "index.html": "index.text"
+    render_template(template, host_url=request.host_url)
+
 
 
 @app.route("/<namespace>")
@@ -27,4 +28,6 @@ def calculate(namespace):
             "result.html", namespace=namespace, slot=slot, solidity_code=solidity_code
         )
 
-    return render_template("result.text", namespace=namespace, slot=slot, solidity_code=solidity_code)
+    return render_template(
+        "result.text", namespace=namespace, slot=slot, solidity_code=solidity_code
+    )
