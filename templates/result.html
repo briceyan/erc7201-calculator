@@ -2,34 +2,28 @@
 <html>
   <head>
     <title>ERC-7201 Slot Calculator</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+      .code-container {
+        position: relative;
+      }
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    </style>
   </head>
-  <body>
+  <body class="container">
     <h1>ERC-7201 Slot Calculator</h1>
     <h3>Namespace</h3>
     {{ namespace }}
     <h3>Slot</h3>
     <p>{{ slot }}</p>
     <h3>Solidity Code</h3>
-    <div style="position: relative">
-      <pre
-        style="background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto"
-      ><code>{{ solidity_code }}</code></pre>
-      <button
-        onclick="copyToClipboard()"
-        style="
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          padding: 5px 10px;
-          background: #007bff;
-          color: white;
-          border: none;
-          border-radius: 3px;
-          cursor: pointer;
-        "
-      >
-        Copy
-      </button>
+    <div class="code-container">
+      <pre><code>{{ solidity_code }}</code></pre>
+      <button onclick="copyToClipboard()" class="copy-btn secondary">Copy</button>
     </div>
     <script>
       function copyToClipboard() {

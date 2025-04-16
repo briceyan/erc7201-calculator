@@ -2,8 +2,16 @@
 <html>
   <head>
     <title>ERC-7201 Slot Calculator</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    </style>
   </head>
-  <body>
+  <body class="container">
     <h1>ERC-7201 Slot Calculator</h1>
     <p>
       Calculate ERC-7201 storage slots for
@@ -11,28 +19,15 @@
     </p>
 
     <form onsubmit="window.location.href='/'+document.querySelector('input').value; return false;">
-      <input
-        type="text"
-        value="example.main"
-        placeholder="e.g. example.main"
-        required
-        style="font-size: 16px; width: 300px; height: 40px; border-radius: 5px; border: 1px solid #ccc"
-      />
-      <button
-        type="submit"
-        style="
-          padding-left: 6px;
-          font-size: 16px;
-          height: 40px;
-          background: #007bff;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        "
-      >
-        Calculate
-      </button>
+      <div class="grid">
+        <input
+          type="text"
+          value="example.main"
+          placeholder="e.g. example.main"
+          required
+        />
+        <button type="submit">Calculate</button>
+      </div>
     </form>
 
     <h3>Using cURL</h3>
