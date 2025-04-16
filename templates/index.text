@@ -1,3 +1,8 @@
 ERC-7201 Slot Calculator
 
-Visit /<namespace> to calculate storage slot for a namespace
+Usage: curl https://erc7201.cc/{namespace}
+
+curl erc7201.cc/example.main
+curl erc7201.cc/openzeppelin.storage.Ownable
+
+// ai! refine
