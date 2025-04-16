@@ -9,7 +9,18 @@
     <p>{{ slot }}</p>
     
     <h2>Solidity Code:</h2>
-    <pre>{{ solidity_code }}</pre>
+    <div style="position: relative;">
+        <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto;"><code>{{ solidity_code }}</code></pre>
+        <button onclick="copyToClipboard()" style="position: absolute; top: 10px; right: 10px; padding: 5px 10px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;">Copy</button>
+    </div>
+    <script>
+        function copyToClipboard() {
+            const code = document.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
     
     <a href="/">Calculate another</a>
 </body>
