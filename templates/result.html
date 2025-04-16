@@ -20,25 +20,23 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <main>
-        <h1>ERC-7201 Slot Calculator</h1>
-        <div class="code-container">
-          <pre><code>{{ solidity_code }}</code></pre>
-          <button onclick="copyToClipboard(this)" class="copy-btn secondary" data-tooltip="Copy" aria-label="Copy">
-            <i class="bi bi-clipboard"></i>
-          </button>
-        </div>
-        <a href="/" role="button" class="secondary">Calculate Another</a>
-      </main>
+    <main class="container">
+      <h1>ERC-7201 Slot Calculator</h1>
+      <div class="code-container">
+        <pre><code>{{ solidity_code }}</code></pre>
+        <button onclick="copyToClipboard(this)" class="copy-btn secondary" data-tooltip="Copy" aria-label="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <a href="/" role="button" class="secondary">Calculate Another</a>
+    </main>
 
-      <footer>
-        <small>
-          Built with <a href="https://picocss.com">Pico</a> •
-          <a href="https://github.com/picocss/examples/blob/master/v2-html/index.html">Source code</a>
-        </small>
-      </footer>
-    </div>
+    <footer class="container">
+      <small>
+        Built with <a href="https://picocss.com">Pico</a> •
+        <a href="https://github.com/picocss/examples/blob/master/v2-html/index.html">Source code</a>
+      </small>
+    </footer>
     <script>
       function copyToClipboard(button) {
         const code = document.querySelector("code").innerText;
