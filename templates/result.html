@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <title>ERC-7201 Slot Calculator</title>
     <style>
-      body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
       .code-container {
         position: relative;
       }
@@ -29,22 +24,22 @@
       <h1>ERC-7201 Slot Calculator</h1>
       <div class="code-container">
         <pre><code>{{ solidity_code }}</code></pre>
-        <button onclick="copyToClipboard(this)" class="copy-btn secondary" data-tooltip="Copy" aria-label="Copy">
-          <i class="bi bi-clipboard"></i>
-        </button>
+        <button onclick="copy(this)" class="copy-btn" data-tooltip="Copy">Copy</button>
       </div>
-      <a href="/" role="button" class="secondary">Calculate Another</a>
+      <a href="/">Back</a>
     </main>
 
     <footer class="container">
       <small>
-        Built with <a href="https://picocss.com">Pico CSS</a> and <a href="https://flask.palletsprojects.com/">Flask</a> •
-        Code written with <a href="https://aider.chat">aider</a> using <a href="https://deepseek.com">DeepSeek</a> model •
-        <a href="https://github.com/yourusername/erc7201-calculator">Source code</a>
+        Built with <a href="https://picocss.com">Pico CSS</a> and
+        <a href="https://flask.palletsprojects.com/">Flask</a> • Code written with
+        <a href="https://aider.chat">aider</a> using <a href="https://deepseek.com">DeepSeek</a> model •
+        <a href="https://github.com/briceyan/erc7201-calculator">Source code</a>
       </small>
     </footer>
+
     <script>
-      function copyToClipboard(button) {
+      function copy(button) {
         const code = document.querySelector("code").innerText;
         navigator.clipboard.writeText(code).then(() => {
           button.setAttribute("data-tooltip", "Copied!");

@@ -1,13 +1,10 @@
-ERC-7201 Namespace Slot Calculator
+ERC-7201 Slot Calculator
 
 Usage:
-  curl {{ host_url }}{namespace}
-  curl {{ host_url }}example.main
-  curl {{ host_url }}openzeppelin.storage.Ownable
+  curl https://erc7201.cc/{namespace}
 
-API Response Format:
-  Namespace: {namespace}
-  Storage Slot: {slot}
-  Solidity Code: {solidity_code}
+For example:
+  curl erc7201.cc/example.main
+  curl erc7201.cc/openzeppelin.storage.Ownable
 
 Learn more: https://eips.ethereum.org/EIPS/eip-7201

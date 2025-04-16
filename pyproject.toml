@@ -1,0 +1,7 @@
+[project]
+name = "erc7201-calculator"
+version = "0.1.0"
+description = "Calculate storage slots for ERC-7201 namespaces"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["flask>=3.1.0", "pycryptodome>=3.22.0"]

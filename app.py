@@ -15,10 +15,11 @@ def calculate(namespace):
     slot = erc7201(namespace)
     solidity_code = format_solidity(namespace, slot)
     tmpl = "result.html" if is_browser(request.user_agent.string) else "result.text"
-    return render_template(tmpl, namespace=namespace, slot=slot, solidity_code=solidity_code)
+    return render_template(
+        tmpl, namespace=namespace, slot=slot, solidity_code=solidity_code
+    )
 
 
 def is_browser(user_agent):
-    """Check if the request comes from a browser"""
     browsers = ("mozilla", "chrome", "safari", "webkit", "opera", "msie")
     return user_agent and any(b in user_agent.lower() for b in browsers)
