@@ -10,6 +10,7 @@ def is_browser(user_agent):
     return user_agent and any(b in user_agent.lower() for b in browsers)
 
 
+# ai! add a index.text and result.text template
 @app.route("/")
 def index():
     if is_browser(request.user_agent.string):
@@ -34,5 +35,3 @@ def calculate(namespace):
     )
     response.headers["Content-Type"] = "text/plain"
     return response
-
-
