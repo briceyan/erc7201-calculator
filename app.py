@@ -13,7 +13,7 @@ def is_browser(user_agent):
 @app.route("/")
 def index():
     if is_browser(request.user_agent.string):
-        return render_template("index.html")
+        return render_template("index.html", host_url=request.host_url)
     return "ERC-7201 Slot Calculator\n\nVisit /<namespace> to calculate storage slot for a namespace"
 
 
