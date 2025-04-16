@@ -21,4 +21,5 @@ struct {struct_name} {{}}
 
 // keccak256(abi.encode(uint256(keccak256("{namespace}")) - 1)) & ~bytes32(uint256(0xff))
 bytes32 private constant {const_name} = {slot};
+
 """
