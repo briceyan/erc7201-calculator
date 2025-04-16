@@ -10,12 +10,12 @@ def index():
     return render_template(tmpl, host_url=request.host_url)
 
 
-@app.route("/<namespace:string>")
+@app.route("/<namespace>")
 def calculate(namespace):
     slot = erc7201(namespace)
     solidity_code = format_solidity(namespace, slot)
-    tmpl = "index.html" if is_browser(request.user_agent.string) else "index.text"
-    render_template(tmpl, namespace=namespace, slot=slot, solidity_code=solidity_code)
+    tmpl = "result.html" if is_browser(request.user_agent.string) else "result.text"
+    return render_template(tmpl, namespace=namespace, slot=slot, solidity_code=solidity_code)
 
 
 def is_browser(user_agent):
