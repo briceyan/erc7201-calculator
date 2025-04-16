@@ -10,12 +10,11 @@ def is_browser(user_agent):
     return user_agent and any(b in user_agent.lower() for b in browsers)
 
 
-# ai! add a index.text and result.text template
 @app.route("/")
 def index():
     if is_browser(request.user_agent.string):
         return render_template("index.html", host_url=request.host_url)
-    return "ERC-7201 Slot Calculator\n\nVisit /<namespace> to calculate storage slot for a namespace"
+    return render_template("index.text")
 
 
 @app.route("/<namespace>")
@@ -28,10 +27,4 @@ def calculate(namespace):
             "result.html", namespace=namespace, slot=slot, solidity_code=solidity_code
         )
 
-    response = make_response(
-        f"ERC-7201 Result for: {namespace}\n\n"
-        f"Storage Slot: {slot}\n\n"
-        f"Solidity Code:\n{solidity_code}"
-    )
-    response.headers["Content-Type"] = "text/plain"
-    return response
+    return render_template("result.text", namespace=namespace, slot=slot, solidity_code=solidity_code)
