@@ -10,10 +10,9 @@
       <a href="https://eips.ethereum.org/EIPS/eip-7201" target="_blank">ERC-7201</a> namespaces.
     </p>
 
-    <form method="get" action="/">
+    <form onsubmit="window.location.href='/'+document.querySelector('input').value; return false;">
       <input
         type="text"
-        name="namespace"
         value="example.main"
         placeholder="e.g. example.main"
         required
