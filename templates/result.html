@@ -15,21 +15,6 @@
         top: 10px;
         right: 10px;
       }
-      .toast {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 24px;
-        background: var(--card-background-color);
-        border: 1px solid var(--card-border-color);
-        border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      .toast.show {
-        opacity: 1;
-      }
     </style>
   </head>
   <body class="container">
@@ -41,22 +26,15 @@
     <h3>Solidity Code</h3>
     <div class="code-container">
       <pre><code>{{ solidity_code }}</code></pre>
-      <button onclick="copyToClipboard()" class="copy-btn secondary">Copy</button>
+      <button onclick="copyToClipboard(this)" class="copy-btn secondary" data-tooltip="Copy">Copy</button>
     </div>
-    <div id="toast" class="toast"></div>
     <script>
-      function copyToClipboard() {
+      function copyToClipboard(button) {
         const code = document.querySelector("code").innerText;
         navigator.clipboard.writeText(code).then(() => {
-          showToast("Copied to clipboard!");
+          button.setAttribute('data-tooltip', 'Copied!');
+          setTimeout(() => button.setAttribute('data-tooltip', 'Copy'), 2000);
         });
-      }
-
-      function showToast(message) {
-        const toast = document.getElementById("toast");
-        toast.textContent = message;
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 2000);
       }
     </script>
 
