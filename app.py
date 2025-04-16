@@ -10,11 +10,10 @@ def is_browser(user_agent):
     return user_agent and any(b in user_agent.lower() for b in browsers)
 
 
-# ai! fix
 @app.route("/")
 def index():
-    template = is_browser(request.user_agent.string) ? "index.html": "index.text"
-    render_template(template, host_url=request.host_url)
+    template = "index.html" if is_browser(request.user_agent.string) else "index.text"
+    return render_template(template, host_url=request.host_url)
 
 
 
