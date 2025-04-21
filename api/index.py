@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from .erc7201 import erc7201, format_solidity
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 
 @app.route("/")
