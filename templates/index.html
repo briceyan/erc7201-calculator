@@ -1,20 +1,19 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<h1>ERC-7201 Slot Calculator</h1>
+<p>
+  Calculate storage slots for
+  <a href="https://eips.ethereum.org/EIPS/eip-7201" target="_blank">ERC-7201</a> namespaces.
+</p>
 
-{% block content %}
-  <h1>ERC-7201 Slot Calculator</h1>
-  <p>
-    Calculate storage slots for
-    <a href="https://eips.ethereum.org/EIPS/eip-7201" target="_blank">ERC-7201</a> namespaces.
-  </p>
+<form onsubmit="window.location.href='/'+document.querySelector('input').value; return false;">
+  <input type="text" value="example.main" placeholder="e.g. example.main" required />
+  <button type="submit">Calculate</button>
+</form>
 
-  <form onsubmit="window.location.href='/'+document.querySelector('input').value; return false;">
-    <input type="text" value="example.main" placeholder="e.g. example.main" required />
-    <button type="submit">Calculate</button>
-  </form>
+// ai! make domain name change whenever input value changes
+<h3>Using cURL</h3>
+<pre><code>curl erc7201.cc/example.main</code></pre>
 
-  <h3>Using cURL</h3>
-  <pre><code>curl {{ host_url }}example.main</code></pre>
-
-  <h3>Using Foundry Cast</h3>
-  <pre><code>cast index-erc7201 example.main</code></pre>
+<h3>Using Foundry Cast</h3>
+<pre><code>cast index-erc7201 example.main</code></pre>
 {% endblock %}
