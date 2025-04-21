@@ -46,35 +46,24 @@ curl -L erc7201.cc/openzeppelin.storage.Ownable
 ### Prerequisites
 
 - Python 3.10+
-- [Poetry](https://python-poetry.org/) (recommended) or pip
+- uv or pip
 
-### Installation
+### Running Locally
 
 ```bash
 git clone https://github.com/briceyan/erc7201-calculator.git
 cd erc7201-calculator
 
-# Create and activate virtual environment
+# Using uv (recommended)
+uv run -- flask -A api.index run
+
+# Using pip
 python -m venv .venv
 source .venv/bin/activate
-
-# Install dependencies with uv (recommended)
-uv pip install -r requirements.txt
-
-# Or alternatively with pip:
-# pip install -r requirements.txt
+pip install -r requirements.txt
+flask -A api.index run
 ```
-
-### Running Locally
-
-```bash
-flask --app api.index run --debug
-```
-
 Then open http://localhost:5000 in your browser.
-
-
-
 
 ## Contributing
 
