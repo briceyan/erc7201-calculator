@@ -2,9 +2,10 @@ ERC-7201 Slot Calculator
 
 Usage:
   curl https://erc7201.cc/{namespace}
+  curl -L erc7201.cc/{namespace}
 
 For example:
-  curl erc7201.cc/example.main
-  curl erc7201.cc/openzeppelin.storage.Ownable
+  curl -L erc7201.cc/example.main
+  curl -L erc7201.cc/openzeppelin.storage.Ownable
 
 Learn more: https://eips.ethereum.org/EIPS/eip-7201
