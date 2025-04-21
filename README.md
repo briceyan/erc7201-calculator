@@ -54,12 +54,13 @@ curl -L erc7201.cc/openzeppelin.storage.Ownable
 git clone https://github.com/briceyan/erc7201-calculator.git
 cd erc7201-calculator
 
-# Using uv (recommended):
+// ai! this could be simplified since we're using uv
+# Using uv:
 python -m venv .venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
 
-# Alternative with pip:
+# Using pip:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -68,19 +69,13 @@ pip install -r requirements.txt
 ### Running Locally
 
 ```bash
-flask run
+flask --app api.index run --debug
 ```
 
 Then open http://localhost:5000 in your browser.
 
-## Technical Details
 
-The calculation follows the ERC-7201 specification:
-1. Compute `keccak256(namespace) - 1`
-2. Compute `keccak256` of that result
-3. Mask off the last byte (`& ~0xff`)
 
-See the implementation in [utils/erc7201.py](utils/erc7201.py).
 
 ## Contributing
 
