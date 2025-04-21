@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     tmpl = (
-        "templates/index.html"
+        "index.html"
         if is_browser(request.user_agent.string)
         else "index.text"
     )
@@ -19,9 +19,9 @@ def calculate(namespace):
     slot = erc7201(namespace)
     solidity_code = format_solidity(namespace, slot)
     tmpl = (
-        "templates/index.html"
+        "result.html"
         if is_browser(request.user_agent.string)
-        else "templatesresult.text"
+        else "result.text"
     )
     return render_template(
         tmpl, namespace=namespace, slot=slot, solidity_code=solidity_code
