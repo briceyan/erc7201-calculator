@@ -14,11 +14,12 @@
 <pre><code id="curl-example">curl erc7201.cc/example.main</code></pre>
 
 <script>
-  document.querySelector('input').addEventListener('input', function(e) {
-    document.getElementById('curl-example').textContent = `curl erc7201.cc/${e.target.value || 'example.main'}`;
+  document.querySelector("input").addEventListener("input", function (e) {
+    document.getElementById("curl-example").textContent = `curl erc7201.cc/${e.target.value || "example.main"}`;
   });
 </script>
 
+// ai! also for this
 <h3>Using Foundry Cast</h3>
 <pre><code>cast index-erc7201 example.main</code></pre>
 {% endblock %}
