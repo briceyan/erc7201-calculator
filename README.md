@@ -54,16 +54,15 @@ curl -L erc7201.cc/openzeppelin.storage.Ownable
 git clone https://github.com/briceyan/erc7201-calculator.git
 cd erc7201-calculator
 
-// ai! this could be simplified since we're using uv
-# Using uv:
+# Create and activate virtual environment
 python -m venv .venv
 source .venv/bin/activate
+
+# Install dependencies with uv (recommended)
 uv pip install -r requirements.txt
 
-# Using pip:
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+# Or alternatively with pip:
+# pip install -r requirements.txt
 ```
 
 ### Running Locally
