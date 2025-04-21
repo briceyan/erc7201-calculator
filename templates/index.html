@@ -19,7 +19,12 @@
   });
 </script>
 
-// ai! also for this
 <h3>Using Foundry Cast</h3>
-<pre><code>cast index-erc7201 example.main</code></pre>
+<pre><code id="cast-example">cast index-erc7201 example.main</code></pre>
+
+<script>
+  document.querySelector("input").addEventListener("input", function (e) {
+    document.getElementById("cast-example").textContent = `cast index-erc7201 ${e.target.value || "example.main"}`;
+  });
+</script>
 {% endblock %}
