@@ -1,51 +1,38 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <title>ERC-7201 Slot Calculator</title>
-    <style>
-      .code-container {
-        position: relative;
-      }
-      .copy-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: flex;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <h1>ERC-7201 Slot Calculator</h1>
-      <div class="code-container">
-        <pre><code>{{ solidity_code }}</code></pre>
-        <button onclick="copy(this)" class="copy-btn" data-tooltip="Copy">Copy</button>
-      </div>
-      <a href="/">Back</a>
-    </main>
+{% extends "base.html" %}
 
-    <footer class="container">
-      <small>
-        Built with <a href="https://picocss.com">Pico CSS</a> and
-        <a href="https://flask.palletsprojects.com/">Flask</a> • Code written with
-        <a href="https://aider.chat">aider</a> using <a href="https://deepseek.com">DeepSeek</a> model •
-        <a href="https://github.com/briceyan/erc7201-calculator">Source code</a>
-      </small>
-    </footer>
+{% block title %}ERC-7201 Slot Calculator - Result{% endblock %}
 
-    <script>
-      function copy(button) {
-        const code = document.querySelector("code").innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          button.setAttribute("data-tooltip", "Copied!");
-          setTimeout(() => button.setAttribute("data-tooltip", "Copy"), 2000);
-        });
-      }
-    </script>
-  </body>
-</html>
+{% block extra_head %}
+  <style>
+    .code-container {
+      position: relative;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>ERC-7201 Slot Calculator</h1>
+  <div class="code-container">
+    <pre><code>{{ solidity_code }}</code></pre>
+    <button onclick="copy(this)" class="copy-btn" data-tooltip="Copy">Copy</button>
+  </div>
+  <a href="/">Back</a>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    function copy(button) {
+      const code = document.querySelector("code").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.setAttribute("data-tooltip", "Copied!");
+        setTimeout(() => button.setAttribute("data-tooltip", "Copy"), 2000);
+      });
+    }
+  </script>
+{% endblock %}
