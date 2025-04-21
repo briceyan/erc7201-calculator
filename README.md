@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+> Note: Most of this project's code was written using [aider](https://aider.chat) with the [DeepSeek](https://deepseek.com) AI model.
+
 A web service that calculates and formats storage slots for [ERC-7201](https://eips.ethereum.org/EIPS/eip-7201) namespaces.
 
 ## Features
@@ -52,10 +54,12 @@ curl -L erc7201.cc/openzeppelin.storage.Ownable
 git clone https://github.com/briceyan/erc7201-calculator.git
 cd erc7201-calculator
 
-# With Poetry:
-poetry install
+# Using uv (recommended):
+python -m venv .venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
 
-# With pip:
+# Alternative with pip:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
