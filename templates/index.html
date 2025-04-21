@@ -11,7 +11,7 @@
 </form>
 
 <h3>Using cURL</h3>
-<pre><code id="curl-example">curl erc7201.cc/example.main</code></pre>
+<pre><code id="curl-example">curl -L erc7201.cc/example.main</code></pre>
 
 <h3>Using Foundry Cast</h3>
 <pre><code id="cast-example">cast index-erc7201 example.main</code></pre>
@@ -20,9 +20,8 @@
 <script>
   document.querySelector("input").addEventListener("input", function (e) {
     const value = e.target.value || "example.main";
-    document.getElementById("curl-example").textContent = `curl erc7201.cc/${value}`;
+    document.getElementById("curl-example").textContent = `curl -L erc7201.cc/${value}`;
     document.getElementById("cast-example").textContent = `cast index-erc7201 ${value}`;
   });
 </script>
-{% endblock %}
-{% endblock %}
+{% endblock %} {% endblock %}

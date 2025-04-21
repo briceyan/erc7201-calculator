@@ -16,10 +16,18 @@ def format_solidity(namespace: str, slot: str) -> str:
     name = parts[-1]
     struct_name = name.capitalize() + "Storage"  # PascalCase
     const_name = name.upper() + "_STORAGE_LOCATION"
-    return f"""/// @custom:storage-location erc7201:{namespace}
-struct {struct_name} {{}}
+    return f"""
+/// @custom:storage-location erc7201:{namespace}
+struct {struct_name} {{
+    // ...
+}}
 
-// keccak256(abi.encode(uint256(keccak256("{namespace}")) - 1)) & ~bytes32(uint256(0xff))
+/// @dev keccak256(abi.encode(uint256(keccak256("{namespace}")) - 1)) & ~bytes32(uint256(0xff))
 bytes32 private constant {const_name} = {slot};
 
+function _get{struct_name}() private pure returns ({struct_name} storage $) {{
+    assembly {{
+        $.slot := {const_name}
+    }}
+}}
 """
